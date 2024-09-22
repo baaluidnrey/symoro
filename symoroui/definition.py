@@ -45,9 +45,10 @@ class DialogDefinition(wx.Dialog):
             wx.StaticText(self, label='Name of the robot:'),
             pos=(0, 0), flag=wx.BOTTOM | wx.ALIGN_LEFT, border=2
         )
+        self.robot_name = wx.TextCtrl(self, size=(92, -1), name='name', value=name)
         szr_grd.Add(
-            wx.TextCtrl(self, size=(92, -1),
-            name='name', value=name), pos=(0, 1)
+            self.robot_name,
+            pos=(0, 1)
         )
         szr_grd.Add(
             wx.StaticText(self, label='Number of moving links:'),
@@ -159,7 +160,7 @@ class DialogDefinition(wx.Dialog):
             self.spin_joints.Value = self.spin_links.Value
 
     def get_values(self):
-        name = self.FindWindowByName('name').Value
+        name = self.robot_name.Value
         nl = int(self.spin_links.Value)
         nj = int(self.spin_joints.Value)
         base_type_idx = self.rbx_base_type.GetSelection()
