@@ -448,7 +448,7 @@ class MainWindow(wx.Frame):
         )
         # joint size slider
         self.slr_joint_size = wx.Slider(self.p, minValue=1, maxValue=100)
-        self.slr_joint_size.SetValue(100*self.canvas.length)
+        self.slr_joint_size.SetValue(int(100*self.canvas.length))
         self.slr_joint_size.Bind(wx.EVT_SCROLL, self.OnSliderChanged)
         grd_szr_control.Add(
             wx.StaticText(self.p, label="Joint Size"),
