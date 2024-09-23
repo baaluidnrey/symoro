@@ -26,6 +26,15 @@ Getting Started
 + For setting up SYMORO, see [Setup][lk:setup].
 + If you have any queries, contact [Aravind][el:aravind].
 
+Running SYMORO
+--------------
+
+On recent Linux, `PYOPENGL_PLATFORM` must be set to `egl` for the visualization to work.
+To run SYMORO:
+
+```sh
+PYOPENGL_PLATFORM=egl symoro-bin
+```
 
 Licence
 -------
