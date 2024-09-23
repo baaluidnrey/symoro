@@ -16,7 +16,7 @@ Requirements
 + python (>= 2.7 or >= 3.4)
 + sympy (== 0.7.3)
 + numpy (>= 1.6.1)
-+ wxPython (>= 2.8.12)
++ wxPython (>= 2.8.12): for build instructions, follow this blog post: https://www.wxpython.org/blog/2017-08-17-builds-for-linux-with-pip/index.html
 + PyOpenGL (>= 3.0.1b2)
 + ConfigParser for the Python3 version (tested with 3.5.0)
 
@@ -36,12 +36,9 @@ Contributors
 ------------
 See [Contributors][lk:contributors].
 
-
 [lk:irccyn]: http://www.irccyn.ec-nantes.fr/
 [lk:hal]: http://hal.archives-ouvertes.fr/hal-01025919
 [lk:setup]: https://github.com/symoro/symoro/wiki/Setup
 [el:aravind]: mailto:aravind.v@tum-create.edu.sg
 [lk:licence]: https://github.com/symoro/symoro/blob/master/LICENCE
 [lk:contributors]: https://github.com/symoro/symoro/graphs/contributors
-
-
