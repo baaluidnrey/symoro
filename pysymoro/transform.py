@@ -227,9 +227,9 @@ class TransformationMatrix(object):
                 setattr(self, attr, value)
             elif key in ['sigma', 'mu']:
                 continue
-            elif key is 'frame':
+            elif key == 'frame':
                 self._frame_j = int(value)
-            elif key is 'ant':
+            elif key == 'ant':
                 self._frame_i = int(value)
             else:
                 raise AttributeError(

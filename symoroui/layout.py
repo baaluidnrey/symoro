@@ -142,8 +142,8 @@ class MainFrame(wx.Frame):
             szr_ele = wx.BoxSizer(wx.HORIZONTAL)
             szr_ele.Add(
                 wx.StaticText(
-                    self.panel, label=label, style=wx.ALIGN_RIGHT
-                ), proportion=0, flag=wx.ALL | wx.ALIGN_RIGHT, border=5
+                    self.panel, label=label, style=wx.ALIGN_TOP
+                ), proportion=0, flag=wx.ALL | wx.ALIGN_TOP, border=5
             )
             szr_ele.Add(
                 ctrl, proportion=0,
@@ -293,7 +293,7 @@ class MainFrame(wx.Frame):
             szr_link.AddSpacer((4,4))
         else:
             szr_link.AddSpacer(4)
-        szr_link.Add(cmb_link, flag=wx.ALL | wx.ALIGN_RIGHT)
+        szr_link.Add(cmb_link, flag=wx.ALL | wx.ALIGN_TOP)
         szr_dyn_params.Add(szr_link, flag=wx.ALL | wx.ALIGN_CENTER)
         szr_grd_dyn = wx.GridBagSizer(0, 0)
         # add dynamic params to the grid
@@ -506,12 +506,12 @@ class MainFrame(wx.Frame):
         m_base_inertial_params = iden_menu.FindItemByPosition(idx)
         # set direct dynamic model status
         if self.robo.is_mobile or \
-            (self.robo.structure is tools.CLOSED_LOOP):
+            (self.robo.structure == tools.CLOSED_LOOP):
             ddym_enable = False
         else:
             ddym_enable = True
         # set constraint equations status
-        if self.robo.structure is not tools.CLOSED_LOOP:
+        if self.robo.structure != tools.CLOSED_LOOP:
             constraint_enable = False
         else:
             constraint_enable = True
@@ -810,7 +810,7 @@ class MainFrame(wx.Frame):
         old_file_path = model_symo.file_out.name
         old_fname = os.path.split(old_file_path)[1][:-4]
         # get extension
-        pattern = re.compile('([\s\w-]*)[_]([a-z]*)')
+        pattern = re.compile(r'([\s\w-]*)[_]([a-z]*)')
         match = re.match(pattern, old_fname)
         extension = match.group(2).strip()
         # create file dialog
