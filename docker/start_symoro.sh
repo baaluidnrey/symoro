@@ -1,5 +1,7 @@
 if [ ! -d $PWD/../symoro-robots ]; then     
     mkdir $PWD/../symoro-robots
+    chgrp docker $PWD/../symoro-robots
+    chmod g+rw $PWD/../symoro-robots
 fi
 
 # Settings to use graphical applications : linux or wsl ?
