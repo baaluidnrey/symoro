@@ -13,7 +13,11 @@
 
 Then, install the Docker image and create a container.
 
-## Building and starting the environment
+## Docker Hub
+
+The image is available on the Docker Hub : see [baaluidnrey/symoro](https://hub.docker.com/repository/docker/baaluidnrey/symoro/general).
+
+## Build from sources
 
 ```bash
 # 1. clone symoro
