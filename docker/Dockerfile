@@ -27,10 +27,13 @@ RUN git -c http.sslVerify=false clone https://github.com/fleborne/symoro.git /ho
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
     python2.7 \
     virtualenv \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get install -q -y --no-install-recommends \
     libgtk-3-dev \
+    freeglut3-dev \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 COPY ./requirements.txt /home/$USERNAME
